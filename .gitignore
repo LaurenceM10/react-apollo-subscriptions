@@ -23,4 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # url
-/config/urls.js
+/src/config/urls.js

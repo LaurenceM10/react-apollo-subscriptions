@@ -8,9 +8,7 @@ import {split} from 'apollo-link';
 import {getMainDefinition} from 'apollo-utilities';
 import {InMemoryCache} from 'apollo-cache-inmemory';
 import {setContext} from "apollo-link-context";
-import { URL } from "../../config/urls";
-
-const AUTH_TOKEN = localStorage.getItem('token');
+import { URL } from "../config/urls";
 
 const httpLink = new HttpLink({
     uri: URL,
@@ -18,7 +16,7 @@ const httpLink = new HttpLink({
 
 const authLink = setContext((_, {headers}) => {
     // get the authentication token from local storage if it exists
-    const token = AUTH_TOKEN;
+    const token = localStorage.getItem('token');
     // return the headers to the context so httpLink can read them
     return {
         headers: {
@@ -33,7 +31,7 @@ const wsLink = new WebSocketLink({
     options: {
         reconnect: true,
         connectionParams: {
-            authToken: localStorage.getItem(AUTH_TOKEN),
+            authToken: localStorage.getItem('token'),
         }
     }
 });
