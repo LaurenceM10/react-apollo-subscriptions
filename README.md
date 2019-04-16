@@ -67,3 +67,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 # react-apollo-subscriptions
+This project is a test of GraphQL Real Time Subscriptions from ReactJS using Apollo Client
+
